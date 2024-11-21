@@ -15,6 +15,7 @@
 		8C9634012CC0019D00345D80 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9634002CC0019D00345D80 /* ContentView.swift */; };
 		8C9634032CC001AF00345D80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C9634022CC001AF00345D80 /* Assets.xcassets */; };
 		8C9634062CC001AF00345D80 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C9634052CC001AF00345D80 /* Preview Assets.xcassets */; };
+		8CB311282CEFBD0100FFB2FE /* FoodDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB311272CEFBD0100FFB2FE /* FoodDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		8C9634002CC0019D00345D80 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8C9634022CC001AF00345D80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C9634052CC001AF00345D80 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8CB311272CEFBD0100FFB2FE /* FoodDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				8C9634052CC001AF00345D80 /* Preview Assets.xcassets */,
+				8CB311272CEFBD0100FFB2FE /* FoodDetailView.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 				8C666EEE2CC19A1C0050ECDB /* FoodView.swift in Sources */,
 				8C9633FF2CC0019D00345D80 /* PaginacionSwiftApp.swift in Sources */,
 				8C666EF02CC19A7B0050ECDB /* FoodsView.swift in Sources */,
+				8CB311282CEFBD0100FFB2FE /* FoodDetailView.swift in Sources */,
 				8C666EF22CC19AFF0050ECDB /* FoodViewModel.swift in Sources */,
 				8C666EF42CC19B6A0050ECDB /* FoodResponse.swift in Sources */,
 			);

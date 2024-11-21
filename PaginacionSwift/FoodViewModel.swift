@@ -11,8 +11,8 @@ class FoodViewModel: ObservableObject {
         guard !isLoading else { return }
         
         isLoading = true
-        let apiUrl = "https://example.com/api/foods?page=\(currentPage)&results=5"  // Actualiza la URL con la correcta
-
+        let apiUrl = "https://alimentos-e03a6-default-rtdb.firebaseio.com/Foods/1"
+        
         guard let url = URL(string: apiUrl) else { return }
         
         URLSession.shared.dataTask(with: url) { [weak self] data, response, error in

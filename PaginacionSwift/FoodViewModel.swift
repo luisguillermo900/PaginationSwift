@@ -3,49 +3,61 @@ import Combine
 
 class FoodViewModel: ObservableObject {
     @Published var foods: [Food] = []
-    private var currentPage = 1
-    private var canLoadMorePages = true
     private var isLoading = false
     
+    // URL para consumir los datos del Firebase Realtime Database
+    private let apiUrl = "https://alimentos-e03a6-default-rtdb.firebaseio.com/1.json"
+    
+    // Función para obtener los alimentos desde Firebase
     func fetchFoods() {
         guard !isLoading else { return }
         
         isLoading = true
-        let apiUrl = "https://alimentos-e03a6-default-rtdb.firebaseio.com/Foods/1"
+        guard let url = URL(string: apiUrl) else {
+            print("URL inválida")
+            self.isLoading = false
+            return
+        }
         
-        guard let url = URL(string: apiUrl) else { return }
-        
+        // se realiza la solicitud HTTP a Firebase
         URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
-            guard let data = data, error == nil else {
+            guard let self = self else { return }
+            
+            if let error = error {
+                print("Error al obtener los datos: \(error.localizedDescription)")
                 DispatchQueue.main.async {
-                    self?.isLoading = false
+                    self.isLoading = false
                 }
                 return
             }
             
-            let decoder = JSONDecoder()
-            do {
-                let response = try decoder.decode(FoodResponse.self, from: data)
+            guard let data = data else {
+                print("No se obtuvo data.")
                 DispatchQueue.main.async {
-                    self?.foods.append(contentsOf: response.results)
-                    self?.canLoadMorePages = response.results.count == 5
-                    self?.isLoading = false
+                    self.isLoading = false
+                }
+                return
+            }
+            
+            // Parsear los datos JSON
+            do {
+                let decoder = JSONDecoder()
+                let fetchedFood = try decoder.decode(Food.self, from: data)  // Decodificamos un solo objeto Food
+                DispatchQueue.main.async {
+                    self.foods = [fetchedFood]  // Agregamos el objeto único a un array de alimentos
+                    self.isLoading = false
                 }
             } catch {
+                print("Error al parsear el JSON: \(error.localizedDescription)")
                 DispatchQueue.main.async {
-                    self?.isLoading = false
+                    self.isLoading = false
                 }
             }
         }.resume()
     }
     
+    
     func loadMoreContentIfNeeded(currentFood food: Food) {
-        guard canLoadMorePages, !isLoading, let lastFood = foods.last else {
-            return
-        }
         
-        if food == lastFood {
-            fetchFoods()
-        }
     }
 }

@@ -1,6 +1,8 @@
 import Foundation
 
-struct Food: Decodable, Hashable {
+
+struct Food: Decodable, Identifiable, Hashable {
+    let id = UUID()
     let codigo: Int
     let nombre: String
     let categoria: String
@@ -9,7 +11,6 @@ struct Food: Decodable, Hashable {
     let carbohidrato: Double
     let energia: Double
     
-    // Mapeo de las claves del JSON
     enum CodingKeys: String, CodingKey {
         case codigo = "CODIGO"
         case nombre = "NOMBRE"
@@ -20,8 +21,3 @@ struct Food: Decodable, Hashable {
         case energia = "ENERGIA"
     }
 }
-
-struct Foods: Decodable, Hashable {
-    let Food: Food
-}
-

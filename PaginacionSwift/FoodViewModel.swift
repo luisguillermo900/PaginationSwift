@@ -4,11 +4,9 @@ import Combine
 class FoodViewModel: ObservableObject {
     @Published var foods: [Food] = []
     private var isLoading = false
+    private let apiUrl = "https://alimentos-e03a6-default-rtdb.firebaseio.com/Foods.json"  
     
-    // URL para consumir los datos del Firebase Realtime Database
-    private let apiUrl = "https://alimentos-e03a6-default-rtdb.firebaseio.com/1.json"
-    
-    // Función para obtener los alimentos desde Firebase
+    // Función para obtener los alimentos
     func fetchFoods() {
         guard !isLoading else { return }
         
@@ -19,7 +17,7 @@ class FoodViewModel: ObservableObject {
             return
         }
         
-        // se realiza la solicitud HTTP a Firebase
+        // Realizar la solicitud HTTP para obtener los datos de Firebase
         URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
             guard let self = self else { return }
             
@@ -39,12 +37,12 @@ class FoodViewModel: ObservableObject {
                 return
             }
             
-            // Parsear los datos JSON
+            
             do {
-                let decoder = JSONDecoder()
-                let fetchedFood = try decoder.decode(Food.self, from: data)  // Decodificamos un solo objeto Food
+                let response = try JSONDecoder().decode([Food].self, from: data)
+                
                 DispatchQueue.main.async {
-                    self.foods = [fetchedFood]  // Agregamos el objeto único a un array de alimentos
+                    self.foods = response  // Almacenamos la lista de alimentos
                     self.isLoading = false
                 }
             } catch {
@@ -54,10 +52,5 @@ class FoodViewModel: ObservableObject {
                 }
             }
         }.resume()
-    }
-    
-    
-    func loadMoreContentIfNeeded(currentFood food: Food) {
-        
     }
 }

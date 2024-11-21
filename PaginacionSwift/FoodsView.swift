@@ -5,23 +5,15 @@ struct FoodsView: View {
 
     var body: some View {
         NavigationView {
-            ScrollView {
-                LazyVStack {
-                    ForEach(foodVM.foods, id: \.self) { food in
-                        NavigationLink(destination: FoodDetailView(food: food)) {
-                            FoodView(food: food)
-                                .onAppear {
-                                    foodVM.loadMoreContentIfNeeded(currentFood: food)
-                                }
-                        }
-                        .buttonStyle(PlainButtonStyle())  
-                    }
+            List(foodVM.foods, id: \.id) { food in
+                NavigationLink(destination: FoodDetailView(food: food)) {
+                    FoodView(food: food)  
                 }
             }
             .navigationTitle("Alimentos")
-        }
-        .onAppear {
-            foodVM.fetchFoods()  // Cargar los alimentos al aparecer la vista.
+            .onAppear {
+                foodVM.fetchFoods()
+            }
         }
     }
 }

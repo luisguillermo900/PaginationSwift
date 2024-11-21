@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct FoodDetailView: View {
-    var food: Food
+    var food: Food  
     
     var body: some View {
         ScrollView {
@@ -22,6 +22,7 @@ struct FoodDetailView: View {
                 
                 Text("Nutrientes")
                     .font(.headline)
+                    .padding(.top, 10)
                 
                 HStack {
                     Text("Proteína: \(food.proteina, specifier: "%.1f") g")

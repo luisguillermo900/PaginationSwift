@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8C666EEE2CC19A1C0050ECDB /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C666EED2CC19A1C0050ECDB /* UserView.swift */; };
-		8C666EF02CC19A7B0050ECDB /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C666EEF2CC19A7B0050ECDB /* UsersView.swift */; };
-		8C666EF22CC19AFF0050ECDB /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C666EF12CC19AFF0050ECDB /* UsersViewModel.swift */; };
-		8C666EF42CC19B6A0050ECDB /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C666EF32CC19B6A0050ECDB /* UserResponse.swift */; };
+		8C666EEE2CC19A1C0050ECDB /* FoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C666EED2CC19A1C0050ECDB /* FoodView.swift */; };
+		8C666EF02CC19A7B0050ECDB /* FoodsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C666EEF2CC19A7B0050ECDB /* FoodsView.swift */; };
+		8C666EF22CC19AFF0050ECDB /* FoodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C666EF12CC19AFF0050ECDB /* FoodViewModel.swift */; };
+		8C666EF42CC19B6A0050ECDB /* FoodResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C666EF32CC19B6A0050ECDB /* FoodResponse.swift */; };
 		8C9633FF2CC0019D00345D80 /* PaginacionSwiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9633FE2CC0019D00345D80 /* PaginacionSwiftApp.swift */; };
 		8C9634012CC0019D00345D80 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9634002CC0019D00345D80 /* ContentView.swift */; };
 		8C9634032CC001AF00345D80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C9634022CC001AF00345D80 /* Assets.xcassets */; };
@@ -18,10 +18,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8C666EED2CC19A1C0050ECDB /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
-		8C666EEF2CC19A7B0050ECDB /* UsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
-		8C666EF12CC19AFF0050ECDB /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
-		8C666EF32CC19B6A0050ECDB /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
+		8C666EED2CC19A1C0050ECDB /* FoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodView.swift; sourceTree = "<group>"; };
+		8C666EEF2CC19A7B0050ECDB /* FoodsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodsView.swift; sourceTree = "<group>"; };
+		8C666EF12CC19AFF0050ECDB /* FoodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodViewModel.swift; sourceTree = "<group>"; };
+		8C666EF32CC19B6A0050ECDB /* FoodResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodResponse.swift; sourceTree = "<group>"; };
 		8C9633FB2CC0019D00345D80 /* PaginacionSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PaginacionSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C9633FE2CC0019D00345D80 /* PaginacionSwiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginacionSwiftApp.swift; sourceTree = "<group>"; };
 		8C9634002CC0019D00345D80 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -63,10 +63,10 @@
 				8C9634002CC0019D00345D80 /* ContentView.swift */,
 				8C9634022CC001AF00345D80 /* Assets.xcassets */,
 				8C9634042CC001AF00345D80 /* Preview Content */,
-				8C666EED2CC19A1C0050ECDB /* UserView.swift */,
-				8C666EEF2CC19A7B0050ECDB /* UsersView.swift */,
-				8C666EF12CC19AFF0050ECDB /* UsersViewModel.swift */,
-				8C666EF32CC19B6A0050ECDB /* UserResponse.swift */,
+				8C666EED2CC19A1C0050ECDB /* FoodView.swift */,
+				8C666EEF2CC19A7B0050ECDB /* FoodsView.swift */,
+				8C666EF12CC19AFF0050ECDB /* FoodViewModel.swift */,
+				8C666EF32CC19B6A0050ECDB /* FoodResponse.swift */,
 			);
 			path = PaginacionSwift;
 			sourceTree = "<group>";
@@ -150,11 +150,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C9634012CC0019D00345D80 /* ContentView.swift in Sources */,
-				8C666EEE2CC19A1C0050ECDB /* UserView.swift in Sources */,
+				8C666EEE2CC19A1C0050ECDB /* FoodView.swift in Sources */,
 				8C9633FF2CC0019D00345D80 /* PaginacionSwiftApp.swift in Sources */,
-				8C666EF02CC19A7B0050ECDB /* UsersView.swift in Sources */,
-				8C666EF22CC19AFF0050ECDB /* UsersViewModel.swift in Sources */,
-				8C666EF42CC19B6A0050ECDB /* UserResponse.swift in Sources */,
+				8C666EF02CC19A7B0050ECDB /* FoodsView.swift in Sources */,
+				8C666EF22CC19AFF0050ECDB /* FoodViewModel.swift in Sources */,
+				8C666EF42CC19B6A0050ECDB /* FoodResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
